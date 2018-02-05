@@ -76,6 +76,9 @@ return array(
 
 	),
 
+	//setup default controller
+	'defaultController'=>'home/index',
+
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
