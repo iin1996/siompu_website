@@ -1,0 +1,9 @@
+.menu-link ul {
+display: flex;
+}
+.menu-link ul li{
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
