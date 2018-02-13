@@ -1,9 +1,66 @@
-.menu-link ul {
-display: flex;
+.menu-link > ul {
+    display: flex;
 }
-.menu-link ul li{
-flex: 1;
-display: flex;
-justify-content: center;
-align-items: center;
+
+.menu-link > ul li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eaeaea;
+    padding: .5rem;
+    background-color: black;
+    color: white;
+}
+
+.slide {
+    height: 300px;
+    background: url('http://loremflickr.com/500/500') no-repeat center;
+    background-size: auto auto;
+    background-size: cover;
+}
+
+.information-item {
+    padding: 1rem;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #eaeaea;
+    margin-top: 1rem;
+}
+
+.information-item .inner {
+    display: flex;
+    flex-direction: row;
+}
+
+.information-item img {
+    width: 100px;
+    height: 100px;
+    max-width: none;
+    margin-right: .5rem;
+}
+
+.information-item p.title {
+    margin-bottom: .5rem;
+}
+.dropdown-content .dropdown-item{
+    padding: 0px;
+}
+.dropdown-item ul.menu-list{
+    padding: 0px;
+    margin: 0px;
+}
+.dropdown-item ul.menu-list li {
+    background: white;
+    justify-content: flex-start;
+    color: black;
+}
+.dropdown-item ul.menu-list li a{
+  align-items: flex-start;
+}
+.dropdown .dropdown-trigger .button{
+    background-color: black;
+}
+.dropdown .dropdown-trigger .button span{
+    color: white;
 }
