@@ -215,3 +215,19 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/siompu_website/css/lib/bulma.css.map
 ---
+2018/03/09 07:37:08 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "css/lib/bulma.css.map". in C:\xampp2\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('css/lib/bulma.c...')
+#1 C:\xampp2\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp2\htdocs\siompu_website\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/siompu_website/css/lib/bulma.css.map
+---
+2018/04/23 10:21:55 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "css/lib/bulma.css.map". in C:\xampp2\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('css/lib/bulma.c...')
+#1 C:\xampp2\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp2\htdocs\siompu_website\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/siompu_website/css/lib/bulma.css.map
+---
