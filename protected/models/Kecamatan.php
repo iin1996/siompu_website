@@ -5,9 +5,9 @@
  *
  * The followings are the available columns in table 'kecamatan':
  * @property integer $id
- * @property integer $nama_kecamatan
- * @property integer $visi_misi
- * @property integer $sejarah
+ * @property string $nama_kecamatan
+ * @property string $visi_misi
+ * @property string $sejarah
  * @property integer $total_penduduk
  *
  * The followings are the available model relations:
@@ -31,7 +31,9 @@ class Kecamatan extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nama_kecamatan, visi_misi, sejarah, total_penduduk', 'numerical', 'integerOnly'=>true),
+			array('total_penduduk', 'numerical', 'integerOnly'=>true),
+			array('nama_kecamatan', 'length', 'max'=>50),
+			array('visi_misi, sejarah', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nama_kecamatan, visi_misi, sejarah, total_penduduk', 'safe', 'on'=>'search'),
@@ -83,9 +85,9 @@ class Kecamatan extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nama_kecamatan',$this->nama_kecamatan);
-		$criteria->compare('visi_misi',$this->visi_misi);
-		$criteria->compare('sejarah',$this->sejarah);
+		$criteria->compare('nama_kecamatan',$this->nama_kecamatan,true);
+		$criteria->compare('visi_misi',$this->visi_misi,true);
+		$criteria->compare('sejarah',$this->sejarah,true);
 		$criteria->compare('total_penduduk',$this->total_penduduk);
 
 		return new CActiveDataProvider($this, array(

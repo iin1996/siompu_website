@@ -3,6 +3,24 @@ p.text-mute {
     font-size: .9rem;
 }
 
+a.is-default-link {
+    padding: 0;
+}
+
+a.is-default-link.in-dark {
+    color: white;
+}
+
+a.is-default-link:hover {
+    background-color: transparent;
+}
+
+.bg-thumbnail {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 nav.navbar .navbar-brand .navbar-item-wrp {
     display: flex;
     flex-direction: row;
@@ -112,3 +130,44 @@ nav.navbar .navbar-brand .navbar-item-wrp .text-wrp p.title {
     color: white;
 }
 
+.kecamatan .kecamatan-kontens {
+    display: block;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.kecamatan .kecamatan-kontens .kecamatan-item {
+    float: left;
+}
+
+.kecamatan .kecamatan-kontens .kecamatan-item .inner, .kecamatan-view .kecamatan-view-content {
+    display: flex;
+    flex-direction: row;
+    padding: .75rem;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .11);
+    border-radius: 6px;
+}
+
+.kecamatan .kecamatan-kontens .kecamatan-item p.title, .kecamatan-view .detail-sec p.title {
+    margin-bottom: .5rem;
+}
+
+.kecamatan .kecamatan-kontens .kecamatan-item .detail-sec, .kecamatan-view .detail-sec {
+    flex: 1;
+}
+
+.kecamatan .kecamatan-kontens .kecamatan-item .bg-thumbnail{
+    width: 70px;
+    height: 70px;
+    margin-right: 1rem;
+}
+
+.kecamatan-view .bg-thumbnail {
+    width: 300px;
+    height: 300px;
+    margin-right: 1rem;
+}
+
+.kecamatan-view .kecamatan-view-content .detail-sec .content{
+    margin-top: 1.5rem;
+}
