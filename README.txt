@@ -1,0 +1,1 @@
+to access gii route => http://localhost/siompu_website/gii/
