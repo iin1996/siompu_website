@@ -1,29 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "desa".
+ * This is the model class for table "potensi_desa".
  *
- * The followings are the available columns in table 'desa':
+ * The followings are the available columns in table 'potensi_desa':
  * @property integer $id
- * @property string $nama_desa
- * @property integer $kecamatan_id
- * @property string $luas_wilayah
- * @property string $nama_kepdes
+ * @property string $nama
+ * @property integer $desa_id
  *
  * The followings are the available model relations:
- * @property Kecamatan $kecamatan
- * @property Dusun[] $dusuns
- * @property PotensiDesa[] $potensiDesas
- * @property Wisata[] $wisatas
+ * @property Desa $desa
  */
-class Desa extends CActiveRecord
+class PotensiDesa extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'desa';
+		return 'potensi_desa';
 	}
 
 	/**
@@ -34,11 +29,11 @@ class Desa extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('kecamatan_id', 'numerical', 'integerOnly'=>true),
-			array('nama_desa, luas_wilayah, nama_kepdes', 'length', 'max'=>50),
+			array('desa_id', 'numerical', 'integerOnly'=>true),
+			array('nama', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nama_desa, kecamatan_id, luas_wilayah, nama_kepdes', 'safe', 'on'=>'search'),
+			array('id, nama, desa_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,10 +45,7 @@ class Desa extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'kecamatan' => array(self::BELONGS_TO, 'Kecamatan', 'kecamatan_id'),
-			'dusuns' => array(self::HAS_MANY, 'Dusun', 'desa_id'),
-			'potensiDesas' => array(self::HAS_MANY, 'PotensiDesa', 'desa_id'),
-			'wisatas' => array(self::HAS_MANY, 'Wisata', 'desa_id'),
+			'desa' => array(self::BELONGS_TO, 'Desa', 'desa_id'),
 		);
 	}
 
@@ -64,10 +56,8 @@ class Desa extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nama_desa' => 'Nama Desa',
-			'kecamatan_id' => 'Kecamatan',
-			'luas_wilayah' => 'Luas Wilayah',
-			'nama_kepdes' => 'Nama Kepdes',
+			'nama' => 'Nama',
+			'desa_id' => 'Desa',
 		);
 	}
 
@@ -90,10 +80,8 @@ class Desa extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nama_desa',$this->nama_desa,true);
-		$criteria->compare('kecamatan_id',$this->kecamatan_id);
-		$criteria->compare('luas_wilayah',$this->luas_wilayah,true);
-		$criteria->compare('nama_kepdes',$this->nama_kepdes,true);
+		$criteria->compare('nama',$this->nama,true);
+		$criteria->compare('desa_id',$this->desa_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -104,7 +92,7 @@ class Desa extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Desa the static model class
+	 * @return PotensiDesa the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

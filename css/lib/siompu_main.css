@@ -130,13 +130,13 @@ nav.navbar .navbar-brand .navbar-item-wrp .text-wrp p.title {
     color: white;
 }
 
-.kecamatan .kecamatan-kontens {
+.kecamatan .kecamatan-kontens, .desa .desa-kontens  {
     display: block;
     overflow: auto;
     margin: 0 auto;
 }
 
-.kecamatan .kecamatan-kontens .kecamatan-item {
+.kecamatan .kecamatan-kontens .kecamatan-item, .desa .desa-kontens .desa-item {
     float: left;
 }
 
@@ -144,7 +144,7 @@ nav.navbar .navbar-brand .navbar-item-wrp .text-wrp p.title {
     overflow: auto;
 }
 
-.kecamatan .kecamatan-kontens .kecamatan-item .inner, .kecamatan-view .kecamatan-view-content {
+.kecamatan .kecamatan-kontens .kecamatan-item .inner, .kecamatan-view .kecamatan-view-content,.desa .desa-kontens .desa-item .inner, .desa-view .desa-view-content {
     display: flex;
     flex-direction: row;
     padding: .75rem;
@@ -152,27 +152,27 @@ nav.navbar .navbar-brand .navbar-item-wrp .text-wrp p.title {
     border-radius: 6px;
 }
 
-.kecamatan .kecamatan-kontens .kecamatan-item p.title, .kecamatan-view .detail-sec p.title {
+.kecamatan .kecamatan-kontens .kecamatan-item p.title, .kecamatan-view .detail-sec p.title,.desa .desa-kontens .desa-item p.title, .desa-view .detail-sec p.title  {
     margin-bottom: .5rem;
 }
 
-.kecamatan .kecamatan-kontens .kecamatan-item .detail-sec, .kecamatan-view .detail-sec {
+.kecamatan .kecamatan-kontens .kecamatan-item .detail-sec, .kecamatan-view .detail-sec,.desa .desa-kontens .desa-item .detail-sec, .desa-view .detail-sec {
     flex: 1;
 }
 
-.kecamatan .kecamatan-kontens .kecamatan-item .bg-thumbnail {
+.kecamatan .kecamatan-kontens .kecamatan-item .bg-thumbnail,.desa .desa-kontens .desa-item .bg-thumbnail {
     width: 70px;
     height: 70px;
     margin-right: 1rem;
 }
 
-.kecamatan-view .bg-thumbnail {
+.kecamatan-view .bg-thumbnail ,.desa-view .bg-thumbnail{
     width: 300px;
     height: 300px;
     margin-right: 1rem;
 }
 
-.kecamatan-view .kecamatan-view-content .detail-sec .content {
+.kecamatan-view .kecamatan-view-content .detail-sec .content,.desa-view .desa-view-content .detail-sec .content {
     margin-top: 1.5rem;
 }
 

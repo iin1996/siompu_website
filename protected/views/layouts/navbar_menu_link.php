@@ -61,54 +61,12 @@ $logoPath = Yii::app()->baseUrl . '/image/logo.png';
             ?>
         </li>
         <li>
-            <div class="dropdown is-hoverable">
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <span>profil desa</span>
-                        <span class="icon is-small">
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                    <div class="dropdown-content">
-                        <div class="dropdown-item">
-                            <ul class="menu-list">
-                                <li><a href="">Desa satu</a></li>
-                                <li><a href="">desa dua</a></li>
-                                <li><a href="">desa tiga</a></li>
-                                <li><a href="">desa empat</a></li>
-                                <li><a href="">desa lima</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <?php
+            echo CHtml::link('Desa',
+                $this->createAbsoluteUrl('desa/'), array('class' => 'is-default-link in-dark'));
+            ?>
         </li>
-        <li>
-            <div class="dropdown is-hoverable">
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <span>potensi desa</span>
-                        <span class="icon is-small">
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                    <div class="dropdown-content">
-                        <div class="dropdown-item">
-                            <ul class="menu-list">
-                                <li><a href="">pakaian</a></li>
-                                <li><a href="">tenunan</a></li>
-                                <li><a href="">adat istiadat</a></li>
-                                <li><a href="">makanan khas</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
+        
         <li>
             <div class="dropdown is-hoverable">
                 <div class="dropdown-trigger">

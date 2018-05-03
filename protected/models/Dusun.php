@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'dusun':
  * @property integer $id
- * @property integer $nama_dusun
+ * @property string $nama_dusun
  * @property integer $desa_id
  * @property integer $jumlah_rt
  * @property integer $jumlah_rw
@@ -32,7 +32,8 @@ class Dusun extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nama_dusun, desa_id, jumlah_rt, jumlah_rw', 'numerical', 'integerOnly'=>true),
+			array('desa_id, jumlah_rt, jumlah_rw', 'numerical', 'integerOnly'=>true),
+			array('nama_dusun', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nama_dusun, desa_id, jumlah_rt, jumlah_rw', 'safe', 'on'=>'search'),
@@ -85,7 +86,7 @@ class Dusun extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nama_dusun',$this->nama_dusun);
+		$criteria->compare('nama_dusun',$this->nama_dusun,true);
 		$criteria->compare('desa_id',$this->desa_id);
 		$criteria->compare('jumlah_rt',$this->jumlah_rt);
 		$criteria->compare('jumlah_rw',$this->jumlah_rw);
