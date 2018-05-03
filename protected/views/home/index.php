@@ -4,7 +4,7 @@ $this->breadcrumbs = array(
     'Home',
 );
 ?>
-<div class="home">
+<div class="home container">
     <?php echo $this->renderPartial('/layouts/navbar_menu_link'); ?>
     <div class="slide"></div>
     <div class="columns">

@@ -140,6 +140,10 @@ nav.navbar .navbar-brand .navbar-item-wrp .text-wrp p.title {
     float: left;
 }
 
+.kecamatan .kecamatan-kontens .items {
+    overflow: auto;
+}
+
 .kecamatan .kecamatan-kontens .kecamatan-item .inner, .kecamatan-view .kecamatan-view-content {
     display: flex;
     flex-direction: row;
@@ -156,7 +160,7 @@ nav.navbar .navbar-brand .navbar-item-wrp .text-wrp p.title {
     flex: 1;
 }
 
-.kecamatan .kecamatan-kontens .kecamatan-item .bg-thumbnail{
+.kecamatan .kecamatan-kontens .kecamatan-item .bg-thumbnail {
     width: 70px;
     height: 70px;
     margin-right: 1rem;
@@ -168,6 +172,40 @@ nav.navbar .navbar-brand .navbar-item-wrp .text-wrp p.title {
     margin-right: 1rem;
 }
 
-.kecamatan-view .kecamatan-view-content .detail-sec .content{
+.kecamatan-view .kecamatan-view-content .detail-sec .content {
     margin-top: 1.5rem;
+}
+
+.admin-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-page .login-box {
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .11);
+    border-radius: 6px;
+}
+
+.admin-page .login-content {
+    width: 100%;
+    max-width: 600px;
+}
+
+.admin-page .login-content .sec:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.admin-page .login-content .button,
+.admin-page .login-content .select,
+.admin-page .login-content .select select {
+    width: 100%;
+}
+
+.admin-page .detail-no-acount {
+    margin-top: 1.5rem;
+    text-align: center;
 }

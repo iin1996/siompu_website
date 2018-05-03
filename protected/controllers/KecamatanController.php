@@ -7,6 +7,7 @@ class KecamatanController extends Controller
         $dataProvider = new CActiveDataProvider('Kecamatan');
         $this->render('index', array(
             'dataProvider' => $dataProvider,
+            'desaPicPath' => Yii::app()->baseUrl . '/image/desa.jpg'
         ));
     }
 
@@ -14,6 +15,7 @@ class KecamatanController extends Controller
     {
         $this->render('view',array(
             'model'=>$this->loadModel($id),
+            'desaPicPath' => Yii::app()->baseUrl . '/image/desa.jpg'
         ));
     }
     // Uncomment the following methods and override them if needed

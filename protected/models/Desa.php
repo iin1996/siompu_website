@@ -13,8 +13,8 @@
  * @property string $nama_kepdes
  *
  * The followings are the available model relations:
- * @property Wisata $wisata
  * @property Kecamatan $kecamatan
+ * @property Wisata $wisata
  * @property Dusun[] $dusuns
  */
 class Desa extends CActiveRecord
@@ -52,8 +52,8 @@ class Desa extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'wisata' => array(self::BELONGS_TO, 'Wisata', 'wisata_id'),
 			'kecamatan' => array(self::BELONGS_TO, 'Kecamatan', 'kecamatan_id'),
+			'wisata' => array(self::BELONGS_TO, 'Wisata', 'wisata_id'),
 			'dusuns' => array(self::HAS_MANY, 'Dusun', 'desa_id'),
 		);
 	}

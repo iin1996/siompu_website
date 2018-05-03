@@ -13,10 +13,8 @@
 
 <body>
 
-<div class="container" id="page">
-	<div class="container">
-		<?php echo $content; ?>		
-	</div>
+<div id="page">
+    <?php echo $content; ?>
 </div>
 </body>
 </html>
