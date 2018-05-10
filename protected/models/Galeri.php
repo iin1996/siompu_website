@@ -1,25 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "wisata".
+ * This is the model class for table "galeri".
  *
- * The followings are the available columns in table 'wisata':
+ * The followings are the available columns in table 'galeri':
  * @property integer $id
- * @property string $nama_wisata
+ * @property string $nama
+ * @property string $image
  * @property integer $desa_id
- * @property string $keterangan
  *
  * The followings are the available model relations:
  * @property Desa $desa
  */
-class Wisata extends CActiveRecord
+class Galeri extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'wisata';
+		return 'galeri';
 	}
 
 	/**
@@ -30,11 +30,12 @@ class Wisata extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('desa_id', 'numerical', 'integerOnly'=>true),
-			array('nama_wisata, keterangan', 'safe'),
+			array('id, desa_id', 'numerical', 'integerOnly'=>true),
+			array('nama', 'length', 'max'=>50),
+			array('image', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nama_wisata, desa_id, keterangan', 'safe', 'on'=>'search'),
+			array('id, nama, image, desa_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,9 +58,9 @@ class Wisata extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nama_wisata' => 'Nama Wisata',
+			'nama' => 'Nama',
+			'image' => 'Image',
 			'desa_id' => 'Desa',
-			'keterangan' => 'Keterangan',
 		);
 	}
 
@@ -82,9 +83,9 @@ class Wisata extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nama_wisata',$this->nama_wisata,true);
+		$criteria->compare('nama',$this->nama,true);
+		$criteria->compare('image',$this->image,true);
 		$criteria->compare('desa_id',$this->desa_id);
-		$criteria->compare('keterangan',$this->keterangan,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -95,7 +96,7 @@ class Wisata extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Wisata the static model class
+	 * @return Galeri the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -11,6 +11,12 @@ $bgDiv = '<div class="bg-thumbnail" style="background-image: url(' .
             <div class="detail-sec">
                 <p class="title is-3">
                     <?php echo $model->nama_wisata ?>
+                </p><p class="title is-3">
+                    <?php echo $model->desa->nama_desa
+?>
+                </p><p class="title is-3">
+                    <?php echo $model->keterangan
+?>
                 </p>
             </div>
         </div>

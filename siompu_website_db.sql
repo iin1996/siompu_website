@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2018 at 04:13 PM
+-- Generation Time: May 10, 2018 at 03:20 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -51,7 +51,12 @@ CREATE TABLE `desa` (
 
 INSERT INTO `desa` (`id`, `nama_desa`, `kecamatan_id`, `luas_wilayah`, `nama_kepdes`) VALUES
 (1, 'pathukan', 6, '21222', 'paryono'),
-(2, 'tegal katon', 6, '21222', 'paryoto');
+(2, 'tegal katon', 6, '21222', 'paryoto'),
+(3, 'tegal katon', 6, '21222', 'paryoto'),
+(4, 'tegal katon', 6, '21222', 'paryoto'),
+(5, 'tegal katon', 6, '21222', 'paryoto'),
+(6, 'tegal katon', 6, '21222', 'paryoto'),
+(7, 'tegal katon', 6, '21222', 'paryoto');
 
 -- --------------------------------------------------------
 
@@ -73,6 +78,19 @@ CREATE TABLE `dusun` (
 
 INSERT INTO `dusun` (`id`, `nama_dusun`, `desa_id`, `jumlah_rt`, `jumlah_rw`) VALUES
 (1, 'lalole', 1, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `galeri`
+--
+
+CREATE TABLE `galeri` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `image` varchar(100) DEFAULT NULL,
+  `desa_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -186,15 +204,16 @@ INSERT INTO `user` (`id`, `username`, `type`, `password`) VALUES
 CREATE TABLE `wisata` (
   `id` int(11) NOT NULL,
   `nama_wisata` text,
-  `desa_id` int(11) DEFAULT NULL
+  `desa_id` int(11) DEFAULT NULL,
+  `keterangan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `wisata`
 --
 
-INSERT INTO `wisata` (`id`, `nama_wisata`, `desa_id`) VALUES
-(2, 'kolam renang', NULL);
+INSERT INTO `wisata` (`id`, `nama_wisata`, `desa_id`, `keterangan`) VALUES
+(2, 'kolam renang', 2, 'ini adalah');
 
 --
 -- Indexes for dumped tables
@@ -219,6 +238,13 @@ ALTER TABLE `desa`
 ALTER TABLE `dusun`
   ADD PRIMARY KEY (`id`),
   ADD KEY `desa_id` (`desa_id`);
+
+--
+-- Indexes for table `galeri`
+--
+ALTER TABLE `galeri`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_galeri_desa` (`desa_id`);
 
 --
 -- Indexes for table `kecamatan`
@@ -274,12 +300,17 @@ ALTER TABLE `agama`
 -- AUTO_INCREMENT for table `desa`
 --
 ALTER TABLE `desa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `dusun`
 --
 ALTER TABLE `dusun`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `galeri`
+--
+ALTER TABLE `galeri`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `kecamatan`
 --
@@ -325,6 +356,12 @@ ALTER TABLE `desa`
 --
 ALTER TABLE `dusun`
   ADD CONSTRAINT `FK_dusun_desa` FOREIGN KEY (`desa_id`) REFERENCES `desa` (`id`);
+
+--
+-- Constraints for table `galeri`
+--
+ALTER TABLE `galeri`
+  ADD CONSTRAINT `FK_galeri_desa` FOREIGN KEY (`desa_id`) REFERENCES `desa` (`id`);
 
 --
 -- Constraints for table `penduduk`
