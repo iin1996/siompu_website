@@ -4,26 +4,21 @@
             <?php echo !$isRegister ? 'Login' : 'Register'; ?>
         </h1>
         <div class="login-content">
-            <?php
-            $form = $this->beginWidget('CActiveForm', array(
-                'id' => 'login-form',
-                'enableAjaxValidation' => false
-            ));
-            ?>
-            <?php echo $form->textField($model, 'username', array('class' => 'input sec',
-                'placeholder' => 'Masukkan username', 'type' => 'text')); ?>
-            <?php echo $form->textField($model, 'password', array('class' => 'input sec',
-                'placeholder' => 'Masukkan password', 'type' => 'password')); ?>
-            <?php if ($isRegister) { ?>
-                <div class="select sec">
-                    <select id="User_type" name="User[type]">
-                        <option value="ADMIN">ADMIN</option>
-                        <option value="KEPDES">KEPDES</option>
-                    </select>
-                </div>
-            <? } ?>
-            <?php echo CHtml::submitButton(!$isRegister ? 'Login' : 'Register', array('class' => 'button is-info sec')); ?>
-            <?php $this->endWidget(); ?>
+            <form id="login-form">
+                <input id="input_username" type="text" class="input sec" placeholder="Masukan username">
+                <input id="input_password" type="password" class="input sec" placeholder="Masukan password">
+                <?php if ($isRegister){ ?>
+                    <div class="select sec">
+                        <select id="input_type">
+                            <option value="ADMIN">ADMIN</option>
+                            <option value="KEPDES">KEPDES</option>
+                        </select>
+                    </div>
+                    <a id="btn_register" class="button is-info sec">Register</a>
+                <?php } else { ?>
+                    <a id="btn_login" class="button is-info sec">Login</a>
+                <?php }; ?>
+            </form>
         </div>
         <p class="detail-no-acount">
             <?php
