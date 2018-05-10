@@ -68,27 +68,10 @@ $logoPath = Yii::app()->baseUrl . '/image/logo.png';
         </li>
         
         <li>
-            <div class="dropdown is-hoverable">
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <span>wisata</span>
-                        <span class="icon is-small">
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                    <div class="dropdown-content">
-                        <div class="dropdown-item">
-                            <ul class="menu-list">
-                                <li><a href="">permandian</a></li>
-                                <li><a href="">pantai</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <?php
+            echo CHtml::link('Wisata',
+           $this->createAbsoluteUrl('wisata/'), array('class' => 'is-default-link in-dark'));
+            ?>
         </li>
         <li>
             <div class="dropdown is-hoverable">

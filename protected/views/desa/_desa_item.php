@@ -12,9 +12,6 @@
             <p class="text-mute">
                 <?php echo $data->kecamatan_id ?>
             </p>
-             <p class="text-mute">
-                <?php echo $data->wisata_id ?>
-            </p>
             <p class="text-mute">
                 <?php echo $data->luas_wilayah ?>
             </p>
