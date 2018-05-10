@@ -87,7 +87,7 @@ $logoPath = Yii::app()->baseUrl . '/image/logo.png';
                     <div class="dropdown-content">
                         <div class="dropdown-item">
                             <ul class="menu-list">
-                                <li><a href="">foto</a></li>
+                                <li><a href="">foto</a> </li>
                                 <li><a href="">video</a></li>
                             </ul>
                         </div>
