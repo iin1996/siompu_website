@@ -26,6 +26,7 @@ function Service(api) {
             if (type === context.method.POST || type === context.method.PUT)
                 options = Object.assign(options, {data: data});
 
+            console.log(options)
             $.ajax(options);
         });
     }

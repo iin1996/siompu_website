@@ -12,7 +12,7 @@ class ApiController extends Controller {
      * Default response format
      * either 'json' or 'xml'
      */
-    private $format = 'json';
+    private $format = 'application/json';
 
     /**
      * @return array action filters
@@ -74,8 +74,10 @@ class ApiController extends Controller {
                 $this->_sendResponse(501, sprintf('Mode <b>create</b> is not implemented for model <b>%s</b>', $_GET['model']));
                 Yii::app()->end();
         }
+        $request_body = json_decode(file_get_contents('php://input'));
+
         // Try to assign User values to attributes
-        foreach ($_POST as $var => $value) {
+        foreach ($request_body as $var => $value) {
             // Does the model have this attribute? If not raise an error
             if ($model->hasAttribute($var)) $model->$var = $value; else
                 $this->_sendResponse(500, sprintf('Parameter <b>%s</b> is not allowed for model <b>%s</b>', $var, $_GET['model']));
@@ -149,6 +151,26 @@ class ApiController extends Controller {
         if ($num > 0) $this->_sendResponse(200, $num);    //this is the only way to work with backbone
         else
             $this->_sendResponse(500, sprintf("Error: Couldn't delete model <b>%s</b> with ID <b>%s</b>.", $_GET['model'], $_GET['id']));
+    }
+
+    public function actionAuth()
+    {
+        // Check if we have the USERNAME and PASSWORD HTTP headers set?
+        if(!(isset($_SERVER['HTTP_USERNAME']) and isset($_SERVER['HTTP_X_PASSWORD']))) {
+            // Error: Unauthorized
+            $this->_sendResponse(401);
+        }
+        $username = $_SERVER['HTTP_USERNAME'];
+        $password = $_SERVER['HTTP_PASSWORD'];
+        // Find the user
+        $user=User::model()->find('LOWER(username)=?',array(strtolower($username)));
+        if($user===null) {
+            // Error: Unauthorized
+            $this->_sendResponse(401, 'Error: User Name is invalid');
+        } else if(!$user->validatePassword($password)) {
+            // Error: Unauthorized
+            $this->_sendResponse(401, 'Error: User Password is invalid');
+        }
     }
 
     private function _sendResponse($status = 200, $body = '', $content_type = 'text/html') {
