@@ -8,8 +8,9 @@ $logoPath = Yii::app()->baseUrl . '/image/logo.png';
                 <?php echo "<img src='" . $logoPath . "''>"; ?>
             </a>
             <div class="text-wrp">
-                <p class="title is-3">Kecamatan <strong>Siompu</strong></p>
-                <p class="text-mute">Kabupaten buton, Sulawesi tenggara</p>
+                <p class="title is-3">Kabupaten Buton, <strong style="font-family:Broadway;">Kec Siompu Barat</strong></p>
+                <p class="title is-5">Sulawesi Tenggara</p>
+    
             </div>
         </div>
         <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
@@ -87,8 +88,10 @@ $logoPath = Yii::app()->baseUrl . '/image/logo.png';
                     <div class="dropdown-content">
                         <div class="dropdown-item">
                             <ul class="menu-list">
-                                <li><a href="">foto</a> </li>
-                                <li><a href="">video</a></li>
+                            <li>
+                            <a target="_blank" href="desa/index.php?r=Desa/">Foto</a>
+                            </li>
+                            <li><a target="_blank" href="index.php?r=controller/action&param1=value1">Video</a></li>
                             </ul>
                         </div>
                     </div>
